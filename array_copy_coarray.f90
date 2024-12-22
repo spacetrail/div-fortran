@@ -10,7 +10,7 @@ program array_copy_caf
 
     sync all
 
-    if (this_image() == receiver array(:) = array(:)[sender]
+    if (this_image() == receiver) array(:) = array(:)[sender]
 
     print '(a,il,a,5(4x,i2))', 'array on proc', this_image(), ' after copy:', array
 
