@@ -22,5 +22,5 @@ program tsunami
 
 end program tsunami
 
-!gfortran -c hello.f90
-!gfortran hello.o -o tsunami
+!gfortran -c hello.f90 -o bin/hello.o
+!gfortran bin/hello.o -o bin/tsunami
