@@ -6,12 +6,14 @@ program array_copy_caf
     if(num_images() /= 2) stop "Error: This program must be run with exactly 2 parallel processes"
 
     if(this_image() == sender) array = [1,2,3,4,5]
-    print '(a,il,a,5(4x,i2))', 'array on proc', this_image(), ' before copy:', array
+    print '(a,i2,a,5(4x,i2))', 'array on proc', this_image(), ' before copy:', array
 
     sync all
 
     if (this_image() == receiver) array(:) = array(:)[sender]
 
-    print '(a,il,a,5(4x,i2))', 'array on proc', this_image(), ' after copy:', array
+    print '(a,i2,a,5(4x,i2))', 'array on proc', this_image(), ' after copy:', array
 
 end program array_copy_caf
+
+# gfortran array_copy_coarray.f90 -o array_coarray -fcoarray=single
