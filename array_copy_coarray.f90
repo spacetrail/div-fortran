@@ -16,4 +16,4 @@ program array_copy_caf
 
 end program array_copy_caf
 
-# gfortran array_copy_coarray.f90 -o array_coarray -fcoarray=single
+! gfortran array_copy_coarray.f90 -o array_coarray -fcoarray=single
